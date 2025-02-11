@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Juliana only 😊</title>
+    <link href="third_page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="question">Will you be my Valentine? ❤️</h1>
+        <div class="button-group">
+            <button class="yes-button" onclick="handleYes()">Yes 💕</button>
+            <button id="no-button" class="no-button" onclick="handleNo()">No 😢</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Call me whenever you're free! 📞</h2>
+            <p>I can’t wait to hear your voice.❤️</p>
+            <button class="close-button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function handleYes() {
+            const modal = document.getElementById("modal");
+            modal.classList.remove("hidden");
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.classList.add("hidden");
+        }
+
+        function handleNo() {
+            const noButton = document.getElementById("no-button");
+            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+            noButton.style.position = "absolute";
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>

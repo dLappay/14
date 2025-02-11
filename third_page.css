@@ -1,0 +1,125 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #fee2e9; /* Light pink background */
+    font-family: "Pangolin", cursive;
+    font-size: 2vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 4vmin;
+    border-radius: 2vmin;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.question {
+    font-size: 3vmin;
+    font-family: "Solitreo", cursive;
+    color: #f40b4a; /* Valentine's red */
+    margin-bottom: 2vmin;
+}
+
+.button-group {
+    display: flex;
+    gap: 3vmin; /* Space between buttons */
+    justify-content: center;
+}
+
+.yes-button, .no-button {
+    padding: 1vmin 4vmin;
+    font-size: 2vmin;
+    font-family: "Pangolin", cursive;
+    border: none;
+    border-radius: 2vmin;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yes-button {
+    background-color: #f980a1; /* Pink */
+    color: white;
+}
+
+.no-button {
+    background-color: #ccc; /* Neutral gray for "No" */
+    color: black;
+}
+
+.yes-button:hover, .no-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal.hidden {
+    display: none; /* Hide the modal */
+}
+
+.modal-content {
+    background: white;
+    padding: 3vmin;
+    border-radius: 1vmin;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+    font-family: "Solitreo", cursive;
+    color: #f40b4a;
+    margin-bottom: 1vmin;
+}
+
+.modal-content p {
+    font-family: "Pangolin", cursive;
+    color: #555;
+    margin-bottom: 2vmin;
+}
+
+.close-button {
+    padding: 1vmin 4vmin;
+    font-size: 2vmin;
+    font-family: "Pangolin", cursive;
+    background-color: #f980a1;
+    color: white;
+    border: none;
+    border-radius: 2vmin;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in animation for modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

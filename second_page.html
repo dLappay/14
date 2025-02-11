@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Juliana only 😊</title>
+    <link href="second_page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Solitreo' rel='stylesheet'>
+    <div class="container" onclick="toggleCard()">
+        <div class="envelope"></div>
+        <div class="card hidden">
+            <h1 class="message">Happy Valentine's Day Juliana</h1>
+            <p>I just want to thank you for filling my heart with joy. Last Valentine’s, I asked you to be my Valentine as a man who admired you from afar. But today, I’m asking you again—this time as a manliligaw.
+
+                I hope that in the years to come, I’ll be asking you to be my Valentine as your man.
+                
+                I’m sorry if this is all I can offer today—no chocolates, flowers, or teddy bears. But I’m giving you something more meaningful: my genuine feelings and my heart. Happy Valentine's Juliana❤️</p>
+            <div class="heart"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="lid closed"></div>
+        <div class="shadow"></div>
+        <button id="action-button" class="action-button" onclick="window.location.href='third_page.html'">
+            Continue ❤️
+        </button>
+    </div>
+    <script>
+        function toggleCard() {
+            const lid = document.querySelector('.lid');
+            const card = document.querySelector('.card');
+            const button = document.querySelector('.action-button');
+
+            if (lid.classList.contains('open')) {
+                lid.classList.remove('open');
+                lid.classList.add('closed');
+                card.classList.remove('visible');
+                card.classList.add('hidden');
+                button.style.opacity = '0'; // Hide button
+                button.style.pointerEvents = 'none';
+            } else {
+                lid.classList.remove('closed');
+                lid.classList.add('open');
+                card.classList.remove('hidden');
+                card.classList.add('visible');
+                button.style.opacity = '1'; // Show button
+                button.style.pointerEvents = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
