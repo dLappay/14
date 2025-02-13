@@ -55,6 +55,21 @@
                 button.style.pointerEvents = 'auto';
             }
         }
+
+        // Ensure button and card are hidden when the page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.querySelector('#action-button');
+            const card = document.querySelector('.card');
+            const lid = document.querySelector('.lid');
+
+            // Reset the states to initial hidden
+            button.style.opacity = '0';
+            button.style.pointerEvents = 'none';
+            lid.classList.add('closed');
+            lid.classList.remove('open');
+            card.classList.add('hidden');
+            card.classList.remove('visible');
+        });
     </script>
 </body>
 </html>

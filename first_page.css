@@ -135,6 +135,7 @@ input#open {
 
 /* Hide the button initially */
 .action-button {
+    font-family: 'Pangolin';
     display: none; /* Hidden by default */
     position: absolute;
     bottom: 150px; /* Adjust as needed */

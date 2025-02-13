@@ -112,6 +112,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+.modal-gif {
+    max-width: 100%; /* Ensures the GIF doesn't overflow */
+    max-height: 200px; /* Adjust height as needed */
+    margin: 1vmin 0; /* Adds spacing around the GIF */
+    border-radius: 10px; /* Optional: Rounded corners for a polished look */
+}
+
+
 /* Fade-in animation for modal */
 @keyframes fadeIn {
     from {

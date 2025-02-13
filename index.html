@@ -29,19 +29,25 @@
     </button>
 
     <script>
-        // Get references to checkbox and button
+        // Get references to the checkbox and button
         const checkbox = document.getElementById("open");
         const button = document.getElementById("action-button");
 
-        // Initially hide the button
-        button.style.display = "none";
+        // Check localStorage to restore the state
+        const isCardOpened = localStorage.getItem("cardOpened") === "true";
+        if (isCardOpened) {
+            checkbox.checked = true; // Mark checkbox as checked
+            button.style.display = "block"; // Show the button
+        }
 
         // Listen for checkbox state changes
-        checkbox.addEventListener("change", function() {
+        checkbox.addEventListener("change", function () {
             if (this.checked) {
-                button.style.display = "block"; // Show button when card is open
+                button.style.display = "block"; // Show the button when card is opened
+                localStorage.setItem("cardOpened", "true"); // Save state to localStorage
             } else {
-                button.style.display = "none"; // Hide button when card is closed
+                button.style.display = "none"; // Hide the button when card is closed
+                localStorage.setItem("cardOpened", "false"); // Save state to localStorage
             }
         });
     </script>
