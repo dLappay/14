@@ -27,19 +27,24 @@
     <button id="action-button" class="action-button" onclick="window.location.href='second_page.html'">
         Continue ❤️
     </button>
-
     <script>
         // Get references to the checkbox and button
         const checkbox = document.getElementById("open");
         const button = document.getElementById("action-button");
-
-        // Check localStorage to restore the state
-        const isCardOpened = localStorage.getItem("cardOpened") === "true";
-        if (isCardOpened) {
+    
+        // Check localStorage and initialize the card state
+        const isCardOpened = localStorage.getItem("cardOpened");
+    
+        if (isCardOpened === "true") {
             checkbox.checked = true; // Mark checkbox as checked
             button.style.display = "block"; // Show the button
+        } else {
+            // If localStorage doesn't have the key, or it is "false", set to closed
+            checkbox.checked = false; // Ensure checkbox is unchecked
+            button.style.display = "none"; // Hide the button
+            localStorage.setItem("cardOpened", "false"); // Explicitly save the closed state
         }
-
+    
         // Listen for checkbox state changes
         checkbox.addEventListener("change", function () {
             if (this.checked) {
@@ -50,6 +55,6 @@
                 localStorage.setItem("cardOpened", "false"); // Save state to localStorage
             }
         });
-    </script>
+    </script> 
 </body>
 </html>
